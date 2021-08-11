@@ -1,0 +1,47 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <!-- <a class="nav-link" href="/">Main</a> -->
+    <%= link_to "Main", root_path, class: "nav-link" %>
+  </li>
+  <!-- <li class="nav-item">
+    <a class="nav-link" href="/about">About</a>
+  </li> -->
+  <li class="nav-item">
+    <%= link_to "About Ruby Style", about_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "sign Up", sign_up_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "sign in", sign_in_path, class: "nav-link" %>
+  </li>
+
+  <li>
+    <% if Current.user %>
+      <%# <li class="nav-item"><%= Current.user.email  %>
+        <li class="nav-item">
+          <%= link_to Current.user.email, edit_password_path ,  class: "nav-link" %>
+        </li>
+
+      <li class="nav-item"><%= button_to "logout", logout_path, method: :delete %> </li>
+
+
+
+    <% else%>
+      <%# <li><%= link_to "Sign UP", sign_up_path %></li>
+      <li class="nav-item"><%= link_to "login", sign_in_path, class: "nav-link"  %></li>
+
+
+    <% end %>
+  </li>
+
+
+
+
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>

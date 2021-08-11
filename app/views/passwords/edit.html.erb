@@ -1,0 +1,29 @@
+<h1>Sign UP</h1>
+
+
+<%= form_with model:Current.user, url: edit_password_path do |form| %>
+
+<% if form.object.errors.any? %>
+  <% form.object.errors.full_messages.each do |msg| %>
+    <%= msg %>
+    <% end %>
+<% end %>
+
+<%# <%= form_with model:@user do |form| %>
+
+<div class="mb-3">
+  <%# <%= form.text_field :password %>
+  <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+</div>
+<div class="mb-3">
+  <%# <%= form.text_field :password_confirmation %>
+  <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password confirmation" %>
+</div>
+
+
+<div class="mb-3">
+  <%= form.submit "Get Started", class: "btn btn-primary"%>
+
+</div>
+
+<% end%>
